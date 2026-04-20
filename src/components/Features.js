@@ -71,12 +71,32 @@ export const Features = () => {
         }
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(6, 17, 42, 0.08);
-            border-color: #2ECC71;
+            box-shadow: 0 20px 40px rgba(6, 17, 42, 0.15);
+            background: #06112a;
+            border-color: #06112a;
         }
-        .icon-box-outline { color: #2ECC71; margin-bottom: 25px; }
-        .feature-card h3 { font-size: 22px; margin-bottom: 15px; color: #06112a; font-weight: 700; }
-        .feature-card p { color: #64748B; line-height: 1.7; }
+        .feature-card:hover h3, 
+        .feature-card:hover p, 
+        .feature-card:hover .icon-box-outline { 
+            color: #FFFFFF; 
+        }
+        .icon-box-outline { 
+            color: #2ECC71; 
+            margin-bottom: 25px; 
+            transition: var(--transition-smooth);
+        }
+        .feature-card h3 { 
+            font-size: 22px; 
+            margin-bottom: 15px; 
+            color: #06112a; 
+            font-weight: 700; 
+            transition: var(--transition-smooth);
+        }
+        .feature-card p { 
+            color: #64748B; 
+            line-height: 1.7; 
+            transition: var(--transition-smooth);
+        }
     </style>
     `;
 };
