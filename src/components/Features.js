@@ -71,14 +71,8 @@ export const Features = () => {
         }
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(6, 17, 42, 0.15);
-            background: #06112a;
-            border-color: #06112a;
-        }
-        .feature-card:hover h3, 
-        .feature-card:hover p, 
-        .feature-card:hover .icon-box-outline { 
-            color: #FFFFFF; 
+            box-shadow: 0 20px 40px rgba(6, 17, 42, 0.08);
+            border-color: #2ECC71;
         }
         .icon-box-outline { 
             color: #2ECC71; 
@@ -90,12 +84,10 @@ export const Features = () => {
             margin-bottom: 15px; 
             color: #06112a; 
             font-weight: 700; 
-            transition: var(--transition-smooth);
         }
         .feature-card p { 
             color: #64748B; 
             line-height: 1.7; 
-            transition: var(--transition-smooth);
         }
     </style>
     `;
