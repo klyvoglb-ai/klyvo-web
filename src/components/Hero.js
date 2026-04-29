@@ -8,10 +8,10 @@ export const Hero = () => {
         <div class="giant-diamond" style="width: 400px; height: 400px; bottom: 100px; left: -100px; opacity: 0.03;"></div>
         
         <div class="container hero-content reveal">
-            <h1 class="hero-title">Elevamos tu marca al <br><span class="text-gradient">siguiente nivel.</span></h1>
-            <p class="hero-subtitle">Diseño premium y tecnología de vanguardia para empresas que no se conforman con lo ordinario.</p>
+            <h1 class="hero-title">Sistema de Recuperación <br><span class="text-gradient">de Ingresos.</span></h1>
+            <p class="hero-subtitle">Usted ya pagó por sus clientes. KLYVO se encarga de que finalmente entren en su cuenta bancaria. El sistema de recuperación de ingresos que detiene la fuga de capital y convierte sus leads en flujo de caja real.</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Empezar proyecto</a>
+                <a href="#cta" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
             </div>
         </div>
     </section>
@@ -29,8 +29,8 @@ export const Hero = () => {
         }
         .hero-title {
             font-size: clamp(45px, 7vw, 85px);
-            line-height: 1;
-            margin-bottom: 30px;
+            line-height: 1.1; /* slightly looser */
+            margin-bottom: 35px;
             font-weight: 800;
             color: var(--text-main);
             letter-spacing: -2px;
@@ -38,8 +38,9 @@ export const Hero = () => {
         .hero-subtitle {
             font-size: clamp(18px, 1.5vw, 22px);
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 750px; /* Wider to avoid awkward wrapping */
             margin: 0 auto 50px;
+            line-height: 1.8;
         }
     </style>
     `;

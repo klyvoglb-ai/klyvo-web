@@ -13,11 +13,13 @@ export const Footer = () => {
                 <p>Innovación digital premium para marcas que buscan destacar.</p>
             </div>
             <div class="footer-links">
-                <h4>Enlaces</h4>
+                <h4>Navegación</h4>
                 <ul>
                     <li><a href="#home">Inicio</a></li>
-                    <li><a href="#features">Solución</a></li>
-                    <li><a href="#stats">Metricas</a></li>
+                    <li><a href="#problem">El Problema</a></li>
+                    <li><a href="#solution">El Sistema</a></li>
+                    <li><a href="#cases">Casos Reales</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-links">

@@ -13,11 +13,12 @@ export const Navbar = () => {
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#features">Solución</a></li>
-                <li><a href="#stats">Características</a></li>
-                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#problem">El Problema</a></li>
+                <li><a href="#solution">El Sistema</a></li>
+                <li><a href="#cases">Casos</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#contact" class="btn-navbar">Comenzar ahora</a>
+            <a href="#cta" class="btn-navbar">QUIERO MI DIAGNÓSTICO</a>
         </div>
     </nav>
     <style>

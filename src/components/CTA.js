@@ -6,9 +6,9 @@ export const CTA = () => {
     <section id="contact" class="cta-section container reveal">
         <div class="cta-box">
             <div class="cta-content">
-                <h2>¿Listo para transformar <br>tu marca?</h2>
-                <p>Únete a las empresas que ya están escalando su presencia <br>digital con tecnología modular.</p>
-                <button class="btn-primary">Comenzar ahora</button>
+                <h2>Tome el control de su capital hoy mismo.</h2>
+                <p>No deje su rentabilidad al azar del error humano. Despliegue la arquitectura que su negocio merece.</p>
+                <button class="btn-primary">QUIERO MI DIAGNÓSTICO</button>
             </div>
             <!-- Subtly floating geometric elements inside -->
             <div class="cta-diamond d1"></div>

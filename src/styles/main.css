@@ -27,8 +27,9 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg-deep);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.8; /* Increased line-height for better readability */
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Make fonts look sharper */
 }
 
 /* Background Geometric Patterns (Light) */
