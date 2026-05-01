@@ -5,14 +5,14 @@ export const Navbar = () => {
     return `
     <nav class="navbar dark-fixed">
         <div class="container nav-content">
-            <div class="logo">
+            <a href="index.html" class="logo" style="text-decoration: none;">
                 <div class="logo-icon">
                     <span>K</span>
                 </div>
                 <span class="logo-text">Kl<span class="y-green">y</span>vo</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
