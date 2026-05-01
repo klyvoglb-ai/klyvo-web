@@ -26,19 +26,26 @@ export const DiagnosticForm = () => {
                 <div class="input-group">
                     <label>WhatsApp (con código de país)</label>
                     <div style="display: flex; gap: 10px;">
-                        <select id="lead-country-code" style="width: 160px; background: #0A1931; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #FFFFFF; padding: 15px 10px; font-weight: 700; cursor: pointer;">
-                            <option value="57" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇴 COL (+57)</option>
-                            <option value="593" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇪🇨 ECU (+593)</option>
-                            <option value="52" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇲🇽 MEX (+52)</option>
-                            <option value="34" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇪🇸 ESP (+34)</option>
-                            <option value="1" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇺🇸 USA (+1)</option>
-                            <option value="51" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇵🇪 PER (+51)</option>
-                            <option value="54" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇦🇷 ARG (+54)</option>
-                            <option value="56" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇱 CHI (+56)</option>
-                            <option value="506" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇷 CRC (+506)</option>
-                            <option value="507" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇵🇦 PAN (+507)</option>
-                            <option value="58" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇻🇪 VEN (+58)</option>
-                        </select>
+                        <div id="country-picker" class="custom-select" style="width: 140px; position: relative;">
+                            <div id="selected-country" style="background: #0A1931; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #FFFFFF; padding: 15px 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; justify-content: space-between;">
+                                <span id="current-flag">🇨🇴</span>
+                                <span id="current-code">+57</span>
+                                <span style="font-size: 10px;">▼</span>
+                            </div>
+                            <div id="country-options" style="display: none; position: absolute; top: 110%; left: 0; width: 220px; background: #0A1931; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; z-index: 100; max-height: 250px; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <div class="country-option" data-code="57" data-flag="🇨🇴" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇨🇴 COL (+57)</div>
+                                <div class="country-option" data-code="593" data-flag="🇪🇨" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇪🇨 ECU (+593)</div>
+                                <div class="country-option" data-code="52" data-flag="🇲🇽" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇲🇽 MEX (+52)</div>
+                                <div class="country-option" data-code="34" data-flag="🇪🇸" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇪🇸 ESP (+34)</div>
+                                <div class="country-option" data-code="1" data-flag="🇺🇸" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇺🇸 USA (+1)</div>
+                                <div class="country-option" data-code="51" data-flag="🇵🇪" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇵🇪 PER (+51)</div>
+                                <div class="country-option" data-code="54" data-flag="🇦🇷" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇦🇷 ARG (+54)</div>
+                                <div class="country-option" data-code="56" data-flag="🇨🇱" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇨🇱 CHI (+56)</div>
+                                <div class="country-option" data-code="506" data-flag="🇨🇷" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇨🇷 CRC (+506)</div>
+                                <div class="country-option" data-code="507" data-flag="🇵🇦" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇵🇦 PAN (+507)</div>
+                                <div class="country-option" data-code="58" data-flag="🇻🇪" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">🇻🇪 VEN (+58)</div>
+                            </div>
+                        </div>
                         <input type="tel" id="lead-phone" placeholder="304 635..." style="flex: 1;" required>
                     </div>
                 </div>
@@ -222,12 +229,40 @@ export const initDiagnosticLogic = () => {
     let leadData = {};
 
     const startBtn = document.getElementById('start-test');
+    // Custom Country Picker Logic
+    const picker = document.getElementById('selected-country');
+    const optionsContainer = document.getElementById('country-options');
+    let currentCountryCode = '57';
+
+    if (picker && optionsContainer) {
+        picker.addEventListener('click', (e) => {
+            e.stopPropagation();
+            optionsContainer.style.display = optionsContainer.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.querySelectorAll('.country-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const flag = option.getAttribute('data-flag');
+                const code = option.getAttribute('data-code');
+                currentCountryCode = code;
+                
+                document.getElementById('current-flag').textContent = flag;
+                document.getElementById('current-code').textContent = `+${code}`;
+                optionsContainer.style.display = 'none';
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', () => {
+            optionsContainer.style.display = 'none';
+        });
+    }
+
     if (!startBtn) return;
 
     startBtn.addEventListener('click', () => {
         const name = document.getElementById('lead-name').value.trim();
         const email = document.getElementById('lead-email').value.trim();
-        const countryCode = document.getElementById('lead-country-code').value;
         const phone = document.getElementById('lead-phone').value.trim();
 
         // Basic Validation
@@ -250,7 +285,7 @@ export const initDiagnosticLogic = () => {
         leadData = {
             name: name,
             email: email,
-            phone: `+${countryCode}${phone.replace(/\D/g,'')}`
+            phone: `+${currentCountryCode}${phone.replace(/\D/g,'')}`
         };
 
         showQuestion(0);
