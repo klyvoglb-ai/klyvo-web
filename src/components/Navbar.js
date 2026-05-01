@@ -64,7 +64,7 @@ export const NavbarV2 = () => {
             color: #FFFFFF;
         }
         .y-green { color: var(--primary); }
-        .nav-links { display: flex; align-items: center; gap: 35px; }
+        .nav-links { display: flex; align-items: center; gap: 35px; list-style: none; margin: 0; padding: 0; }
         .nav-links a { color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 500; }
         .nav-links a:hover { color: var(--primary); }
         .btn-navbar {
