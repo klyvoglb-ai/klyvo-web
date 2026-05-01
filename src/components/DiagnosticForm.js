@@ -225,8 +225,7 @@ export const initDiagnosticLogic = () => {
 
         const qData = questions[index];
         container.innerHTML = `
-            <h2 class="form-title">Pregunta ${index + 1}</h2>
-            <p class="form-subtitle">${qData.q}</p>
+            <p class="form-subtitle" style="font-size: 24px; color: #FFFFFF; font-weight: 600; margin-top: 20px;">${qData.q}</p>
             <div class="options-list">
                 ${qData.options.map((opt, i) => `
                     <div class="option-card" data-value="${opt.v}">
