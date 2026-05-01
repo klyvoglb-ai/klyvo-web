@@ -13,7 +13,7 @@ export const Navbar = () => {
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
             <a href="diagnostico.html" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
