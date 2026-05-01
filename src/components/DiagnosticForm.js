@@ -16,15 +16,15 @@ export const DiagnosticForm = () => {
                 <h2 class="form-title">Inicie su Diagnóstico Gratuito</h2>
                 <p class="form-subtitle">Complete sus datos para recibir el informe detallado al finalizar.</p>
                 <div class="input-group">
-                    <label>Nombre Completo</label>
+                    <label>Nombre</label>
                     <input type="text" id="lead-name" placeholder="Ej. Marcelo Pérez" required>
                 </div>
                 <div class="input-group">
-                    <label>Correo Corporativo</label>
+                    <label>Correo</label>
                     <input type="email" id="lead-email" placeholder="email@empresa.com" required>
                 </div>
                 <div class="input-group">
-                    <label>WhatsApp (con código de país)</label>
+                    <label>Celular de Contacto</label>
                     <div style="display: flex; gap: 10px;">
                         <div id="country-picker" class="custom-select" style="width: 140px; position: relative;">
                             <div id="selected-country" style="background: #0A1931; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #FFFFFF; padding: 15px 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; justify-content: space-between;">
@@ -46,7 +46,7 @@ export const DiagnosticForm = () => {
                                 <div class="country-option" data-code="58" data-flag="🇻🇪" style="padding: 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600; color: #FFFFFF;">🇻🇪 VEN (+58)</div>
                             </div>
                         </div>
-                        <input type="tel" id="lead-phone" placeholder="304 635..." style="flex: 1;" required>
+                        <input type="tel" id="lead-phone" placeholder="Número de celular" style="flex: 1;" required>
                     </div>
                 </div>
                 <button id="start-test" class="btn-primary full-width">COMENZAR AUDITORÍA</button>
