@@ -1,6 +1,6 @@
 /**
  * Diagnostic Form Component (Premium Multi-step)
- * Updated with strategic Revenue Recovery questions.
+ * Updated with strategic Revenue Recovery questions and detailed profiles.
  */
 export const DiagnosticForm = () => {
     return `
@@ -44,7 +44,7 @@ export const DiagnosticForm = () => {
             border: 1px solid rgba(46, 204, 113, 0.2);
             border-radius: 30px;
             padding: 50px;
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             position: relative;
@@ -103,19 +103,31 @@ export const DiagnosticForm = () => {
 
         .btn-primary.full-width { width: 100%; margin-top: 20px; padding: 18px; font-size: 18px; font-weight: 700; cursor: pointer; }
 
+        /* Result Styles */
+        .result-header { text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 30px; }
         .result-badge {
             background: var(--primary);
             color: #06112a;
-            padding: 8px 20px;
-            border-radius: 50px;
+            padding: 6px 15px;
+            border-radius: 4px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 20px;
-            font-size: 12px;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-size: 11px;
+            text-transform: uppercase;
         }
-        .result-title { font-size: 42px; line-height: 1.1; margin-bottom: 20px; color: #FFFFFF; font-weight: 700; }
-        .result-desc { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
+        .result-name { font-size: 32px; color: #FFFFFF; font-weight: 800; margin-bottom: 5px; }
+        .result-analysis { color: var(--primary); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .result-section { margin-bottom: 25px; text-align: left; }
+        .section-label { color: var(--primary); font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .section-content { color: #FFFFFF; font-size: 17px; line-height: 1.6; opacity: 0.9; }
+        .quote-box {
+            background: rgba(46, 204, 113, 0.05);
+            border-left: 3px solid var(--primary);
+            padding: 15px 20px;
+            font-style: italic;
+        }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -191,7 +203,6 @@ export const initDiagnosticLogic = () => {
         }
     ];
 
-    let currentStep = 0;
     let score = 0;
     let leadData = {};
 
@@ -252,29 +263,74 @@ export const initDiagnosticLogic = () => {
         document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
         container.classList.add('active');
 
-        let profile = "";
-        let desc = "";
+        const diagnostics = [
+            {
+                id: 1,
+                name: "El Colador de Capital",
+                sub: "Fuga Crítica",
+                analysis: "Sufre de una brecha de emergencia (Nivel 4).",
+                revelation: "Su problema no es la falta de leads, es el Silencio Administrativo. Usted está financiando a su competencia: cada minuto que su lead espera, el valor de su inversión se evapora.",
+                mirror: "Usted ya pagó por el cliente, pero su infraestructura actual lo está dejando caer justo antes de la meta.",
+                escape: "Necesita sellar la fuga con el mecanismo CLUTCH. Agende su sesión para ver el mapa de recuperación de su ROI."
+            },
+            {
+                id: 2,
+                name: "La Trampa del Experto",
+                sub: "Saturación Operativa",
+                analysis: "El cliente está en el nivel de 'fastidio extremo' que impide el crecimiento.",
+                revelation: "Usted no es ineficiente, es un Cerrador Secuestrado. Su talento está siendo desperdiciado en tareas de FAQ que una infraestructura debería resolver por usted.",
+                mirror: "Su equipo de ventas está tan ocupado 'gestionando mensajes' que no tiene energía para 'gestionar ingresos'.",
+                escape: "Despliegue un Exoskeleton Operativo. Agende para ver cómo liberar el 80% de su tiempo administrativo."
+            },
+            {
+                id: 3,
+                name: "El Cementerio de Oportunidades",
+                sub: "Activo Inerte",
+                analysis: "Identificación de una causa oculta que explica fallas previas.",
+                revelation: "Usted tiene un Activo Durmiente. Su base de datos no está 'muerta', está en coma por falta de un sistema de re-activación sistemática.",
+                mirror: "Está sentado sobre una mina de oro por la que ya pagó, pero que su sistema actual ignora cada día.",
+                escape: "Active el motor de Revenue Recovery. Agende para descubrir cuánto flujo de caja puede despertar en 30 días."
+            },
+            {
+                id: 4,
+                name: "El Espejismo de Crecimiento",
+                sub: "Escala Frágil",
+                analysis: "El cliente percibe que está en un nivel 'primitivo' frente a su potencial.",
+                revelation: "Usted sufre de Fricción Evolutiva. Intentar escalar con su sistema actual es como poner un motor de Ferrari en un chasis de madera: el próximo salto lo romperá.",
+                mirror: "Su negocio ha crecido, pero su infraestructura se quedó en el pasado. Usted ya no pertenece a este nivel operativo.",
+                escape: "Es hora del Upgrade Operativo. Agende para diseñar la arquitectura que soporte su siguiente nivel de escala."
+            }
+        ];
 
-        // Max possible score: 40 (approx)
-        if (score <= 18) {
-            profile = "Optimización Urgente";
-            desc = `Estimado ${leadData.name}, su negocio presenta fugas críticas de capital. El silencio operativo está costándole hasta un 50% de ROI mensual. Necesita una infraestructura de Revenue Recovery inmediata para sellar las grietas.`;
-        } else if (score <= 28) {
-            profile = "Potencial de Crecimiento";
-            desc = `Estimado ${leadData.name}, su operación es sólida pero está atrapada en la "Trampa Operativa". Tiene un potencial de facturación no aprovechado del 30% que podría recuperar en 90 días mediante automatización.`;
-        } else if (score <= 35) {
-            profile = "Escalamiento Avanzado";
-            desc = `Estimado ${leadData.name}, su infraestructura está lista para el siguiente nivel. Solo requiere ajustes en la recuperación multi-canal para optimizar su ROI y escalar agresivamente su volumen de leads.`;
-        } else {
-            profile = "Liderazgo de Mercado";
-            desc = `Estimado ${leadData.name}, usted opera con alta eficiencia. Su enfoque debe ser ahora la integración de IA predictiva para dominar su sector y mantener una ventaja competitiva absoluta e inalcanzable.`;
-        }
+        let result;
+        if (score <= 18) result = diagnostics[0];
+        else if (score <= 28) result = diagnostics[1];
+        else if (score <= 35) result = diagnostics[2];
+        else result = diagnostics[3];
 
         container.innerHTML = `
-            <div class="result-badge">ANÁLISIS ESTRATÉGICO PARA ${leadData.name.toUpperCase()}</div>
-            <h2 class="result-title">${profile}</h2>
-            <p class="result-desc">${desc}</p>
-            <button onclick="location.href='https://wa.me/${leadData.phone.replace(/\D/g,'')}'" class="btn-primary full-width">RESERVAR SESIÓN DE REVENUE RECOVERY</button>
+            <div class="result-header">
+                <div class="result-badge">Diagnóstico para ${leadData.name}</div>
+                <h2 class="result-name">${result.name}</h2>
+                <p class="result-analysis">(${result.sub}) • ${result.analysis}</p>
+            </div>
+
+            <div class="result-section">
+                <span class="section-label">La Revelación</span>
+                <p class="section-content">${result.revelation}</p>
+            </div>
+
+            <div class="result-section">
+                <span class="section-label">Efecto Espejo</span>
+                <div class="section-content quote-box">"${result.mirror}"</div>
+            </div>
+
+            <div class="result-section" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
+                <span class="section-label">Ruta de Escape</span>
+                <p class="section-content" style="font-weight: 600; color: var(--primary);">${result.escape}</p>
+            </div>
+
+            <button onclick="location.href='https://wa.me/${leadData.phone.replace(/\D/g,'')}'" class="btn-primary full-width">AGENDAR SESIÓN ESTRATÉGICA</button>
         `;
     };
 };
