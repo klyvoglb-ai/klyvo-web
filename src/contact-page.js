@@ -25,47 +25,39 @@ const ContactApp = () => {
                 </div>
 
                 <!-- Contact Cards -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 60px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px;">
 
                     <!-- Email -->
                     <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none;">
-                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
-                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <div style="background: #0A1931; border: 1px solid rgba(0,255,133,0.25); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(0,255,133,0.25)'">
+                            <div style="width: 64px; height: 64px; background: rgba(0,255,133,0.15); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                             </div>
-                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Correo</p>
+                            <p style="font-size: 12px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 600;">Correo</p>
                             <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">klyvoglb@gmail.com</p>
                         </div>
                     </a>
 
-                    <!-- Colombia -->
-                    <a href="https://wa.me/573046352816?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none;">
-                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
-                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                                </svg>
-                            </div>
-                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">🇨🇴 Colombia · WhatsApp</p>
+                    <!-- WhatsApp - Ambos números juntos -->
+                    <div style="background: #0A1931; border: 1px solid rgba(0,255,133,0.25); border-radius: 20px; padding: 36px 28px; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(0,255,133,0.6)'" onmouseout="this.style.borderColor='rgba(0,255,133,0.25)'">
+                        <div style="width: 64px; height: 64px; background: rgba(0,255,133,0.15); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <p style="font-size: 12px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 600;">WhatsApp</p>
+                        <a href="https://wa.me/573046352816?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; margin-bottom: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                            <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇨🇴 Colombia</p>
                             <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">+57 304 635 2816</p>
-                        </div>
-                    </a>
-
-                    <!-- Ecuador -->
-                    <a href="https://wa.me/593979003056?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none;">
-                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
-                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                                </svg>
-                            </div>
-                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">🇪🇨 Ecuador · WhatsApp</p>
+                        </a>
+                        <a href="https://wa.me/593979003056?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                            <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇪🇨 Ecuador</p>
                             <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">+593 97 900 3056</p>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
 
                 </div>
 
