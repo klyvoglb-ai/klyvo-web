@@ -26,18 +26,18 @@ export const DiagnosticForm = () => {
                 <div class="input-group">
                     <label>WhatsApp (con código de país)</label>
                     <div style="display: flex; gap: 10px;">
-                        <select id="lead-country-code" style="width: 120px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #FFFFFF; padding: 15px 10px;">
-                            <option value="57">🇨🇴 +57</option>
-                            <option value="593">🇪🇨 +593</option>
-                            <option value="52">🇲🇽 +52</option>
-                            <option value="34">🇪🇸 +34</option>
-                            <option value="1">🇺🇸 +1</option>
-                            <option value="51">🇵🇪 +51</option>
-                            <option value="54">🇦🇷 +54</option>
-                            <option value="56">🇨🇱 +56</option>
-                            <option value="506">🇨🇷 +506</option>
-                            <option value="507">🇵🇦 +507</option>
-                            <option value="58">🇻🇪 +58</option>
+                        <select id="lead-country-code" style="width: 160px; background: #0A1931; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #FFFFFF; padding: 15px 10px; font-weight: 700; cursor: pointer;">
+                            <option value="57" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇴 COL (+57)</option>
+                            <option value="593" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇪🇨 ECU (+593)</option>
+                            <option value="52" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇲🇽 MEX (+52)</option>
+                            <option value="34" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇪🇸 ESP (+34)</option>
+                            <option value="1" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇺🇸 USA (+1)</option>
+                            <option value="51" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇵🇪 PER (+51)</option>
+                            <option value="54" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇦🇷 ARG (+54)</option>
+                            <option value="56" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇱 CHI (+56)</option>
+                            <option value="506" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇨🇷 CRC (+506)</option>
+                            <option value="507" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇵🇦 PAN (+507)</option>
+                            <option value="58" style="background: #0A1931; color: #FFFFFF; font-weight: 700;">🇻🇪 VEN (+58)</option>
                         </select>
                         <input type="tel" id="lead-phone" placeholder="304 635..." style="flex: 1;" required>
                     </div>
