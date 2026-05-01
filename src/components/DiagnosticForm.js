@@ -293,22 +293,31 @@ export const initDiagnosticLogic = () => {
             phone: `+${currentCountryCode}${phone.replace(/\D/g,'')}`
         };
 
-        // Send Lead to EmailJS (Version Final de Emergencia V18)
+        // Send Lead to EmailJS (Técnica del Formulario Virtual V19)
         if (window.emailjs) {
-            const templateParams = {
-                name: String(leadData.name),
-                from_name: String(leadData.name),
-                reply_to: String(leadData.email),
-                phone: String(leadData.phone),
-                message: `Nuevo Lead: ${leadData.name} - Email: ${leadData.email} - Tel: ${leadData.phone}`
+            const virtualForm = document.createElement('form');
+            virtualForm.style.display = 'none';
+            
+            const createInput = (name, value) => {
+                const input = document.createElement('input');
+                input.name = name;
+                input.value = value;
+                return input;
             };
 
-            emailjs.send('service_g7jngvj', 'template_q8fi9st', templateParams, 'AScRj2dq-26qm9YUZ')
+            virtualForm.appendChild(createInput('from_name', leadData.name));
+            virtualForm.appendChild(createInput('from_email', leadData.email));
+            virtualForm.appendChild(createInput('from_phone', leadData.phone));
+            document.body.appendChild(virtualForm);
+
+            emailjs.sendForm('service_g7jngvj', 'template_q8fi9st', virtualForm, 'AScRj2dq-26qm9YUZ')
                 .then(() => {
-                    console.log('Enviado!');
+                    console.log('¡ENVIADO CON ÉXITO!');
+                    virtualForm.remove();
                 })
                 .catch((err) => {
-                    console.error('Error:', err);
+                    console.error('ERROR:', err);
+                    virtualForm.remove();
                 });
         }
 
