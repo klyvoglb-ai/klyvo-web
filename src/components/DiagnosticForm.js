@@ -293,24 +293,22 @@ export const initDiagnosticLogic = () => {
             phone: `+${currentCountryCode}${phone.replace(/\D/g,'')}`
         };
 
-        // Send Lead to EmailJS (Version de Maxima Robustez)
+        // Send Lead to EmailJS (Version Final de Emergencia V18)
         if (window.emailjs) {
             const templateParams = {
-                to_name: "Admin KLYVO",
                 name: String(leadData.name),
                 from_name: String(leadData.name),
                 reply_to: String(leadData.email),
-                email: String(leadData.email),
-                phone: String(leadData.phone)
+                phone: String(leadData.phone),
+                message: `Nuevo Lead: ${leadData.name} - Email: ${leadData.email} - Tel: ${leadData.phone}`
             };
-
-            console.log('Iniciando envío robusto:', templateParams);
 
             emailjs.send('service_g7jngvj', 'template_q8fi9st', templateParams, 'AScRj2dq-26qm9YUZ')
                 .then(() => {
-                    console.log('¡ENVÍO EXITOSO!');
-                }, (err) => {
-                    console.error('FALLO CRÍTICO:', err);
+                    console.log('Enviado!');
+                })
+                .catch((err) => {
+                    console.error('Error:', err);
                 });
         }
 
