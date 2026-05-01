@@ -7,6 +7,10 @@ export default defineConfig({
     assetsDir: 'assets',
     minify: 'terser', // Premium optimization
     rollupOptions: {
+      input: {
+        main: './index.html',
+        diagnostico: './diagnostico.html'
+      },
       output: {
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,

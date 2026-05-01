@@ -16,7 +16,7 @@ export const Navbar = () => {
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
-            <a href="#cta" class="btn-navbar">QUIERO MI DIAGNÓSTICO</a>
+            <a href="diagnostico.html" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
         </div>
     </nav>
     <style>

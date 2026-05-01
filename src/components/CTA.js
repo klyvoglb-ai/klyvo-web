@@ -8,7 +8,7 @@ export const CTA = () => {
             <div class="cta-content">
                 <h2>Tome el control de su capital hoy mismo.</h2>
                 <p>No deje su rentabilidad al azar del error humano. Despliegue la arquitectura que su negocio merece.</p>
-                <button class="btn-primary">QUIERO MI DIAGNÓSTICO</button>
+                <a href="diagnostico.html" class="btn-primary" style="text-decoration: none; display: inline-block;">QUIERO MI DIAGNÓSTICO</a>
             </div>
             <!-- Subtly floating geometric elements inside -->
             <div class="cta-diamond d1"></div>

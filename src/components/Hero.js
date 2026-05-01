@@ -11,7 +11,7 @@ export const Hero = () => {
             <h1 class="hero-title">Sistema de Recuperación <br><span class="text-gradient">de Ingresos.</span></h1>
             <p class="hero-subtitle">Usted ya pagó por sus clientes. KLYVO se encarga de que finalmente entren en su cuenta bancaria. El sistema de recuperación de ingresos que detiene la fuga de capital y convierte sus leads en flujo de caja real.</p>
             <div class="hero-actions">
-                <a href="#cta" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
+                <a href="diagnostico.html" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
             </div>
         </div>
     </section>
