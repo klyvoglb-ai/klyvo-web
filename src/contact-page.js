@@ -6,10 +6,78 @@ import { initScrollReveal } from './utils/animations.js';
 const ContactApp = () => {
     return `
         ${Navbar()}
-        <main style="padding-top: 150px; min-height: 60vh; text-align: center;">
-            <div class="container reveal">
-                <h1 style="font-size: clamp(32px, 5vw, 56px); margin-bottom: 20px;">Contacto</h1>
-                <p style="font-size: 18px; color: var(--text-muted);">AQUI IRAN LOS CONTACTOS</p>
+        <main style="padding-top: 120px; min-height: 80vh; position: relative; overflow: hidden;">
+
+            <!-- Background glow -->
+            <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,255,133,0.06) 0%, transparent 70%); pointer-events: none;"></div>
+
+            <div class="container reveal" style="max-width: 900px; margin: 0 auto; padding: 60px 20px; text-align: center;">
+
+                <!-- Header -->
+                <div style="margin-bottom: 60px;">
+                    <span style="display: inline-block; background: rgba(0,255,133,0.12); border: 1px solid rgba(0,255,133,0.3); color: #00FF85; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;">Estamos aquí para ti</span>
+                    <h1 style="font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 20px;">
+                        Hablemos de tu <span style="background: linear-gradient(135deg, #00FF85, #00C6FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">crecimiento</span>
+                    </h1>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; line-height: 1.7;">
+                        Escríbenos o llámanos directamente. Nuestro equipo está listo para ayudarte a recuperar tu rentabilidad.
+                    </p>
+                </div>
+
+                <!-- Contact Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 60px;">
+
+                    <!-- Email -->
+                    <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none;">
+                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Correo</p>
+                            <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">klyvoglb@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <!-- Colombia -->
+                    <a href="https://wa.me/573046352816?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none;">
+                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">🇨🇴 Colombia · WhatsApp</p>
+                            <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">+57 304 635 2816</p>
+                        </div>
+                    </a>
+
+                    <!-- Ecuador -->
+                    <a href="https://wa.me/593979003056?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none;">
+                        <div class="contact-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(0,255,133,0.4)';this.style.background='rgba(0,255,133,0.06)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.04)'">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(0,255,133,0.2), rgba(0,198,255,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">🇪🇨 Ecuador · WhatsApp</p>
+                            <p style="font-size: 16px; font-weight: 700; color: #FFFFFF; margin: 0;">+593 97 900 3056</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- CTA Bottom -->
+                <div style="background: linear-gradient(135deg, rgba(0,255,133,0.08), rgba(0,198,255,0.08)); border: 1px solid rgba(0,255,133,0.2); border-radius: 24px; padding: 48px 40px;">
+                    <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 800; margin-bottom: 16px;">¿Listo para comenzar?</h2>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 16px;">Inicia tu diagnostico gratuito y descubre como recuperar tu inversion.</p>
+                    <a href="/diagnostico.html" style="display: inline-block; background: linear-gradient(135deg, #00FF85, #00C6FF); color: #000000; font-weight: 800; font-size: 15px; padding: 16px 40px; border-radius: 50px; text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 10px 30px rgba(0,255,133,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+                        INICIAR DIAGNOSTICO GRATUITO →
+                    </a>
+                </div>
+
             </div>
         </main>
         ${Footer()}
