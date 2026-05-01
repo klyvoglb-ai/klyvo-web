@@ -73,14 +73,32 @@ const ContactApp = () => {
                 <!-- 2-column layout: logo LEFT, cards RIGHT -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px;">
 
-                    <!-- LEFT: Floating logo -->
+                    <!-- LEFT: Floating KLYVO Logo (accurate SVG) -->
                     <div style="display: flex; align-items: center; justify-content: center; padding: 20px;">
                         <div class="logo-float" style="text-align: center;">
-                            <div class="logo-big-icon">
-                                <span>K</span>
-                            </div>
-                            <div class="logo-big-text">
-                                Kl<span class="y-green">y</span>vo
+                            <svg width="220" height="200" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1B5C3A"/>
+                                        <stop offset="100%" stop-color="#4CAF50"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- K: vertical stem -->
+                                <rect x="10" y="10" width="16" height="130" rx="3" fill="#1B2B5E"/>
+                                <!-- K: upper arm -->
+                                <polygon points="26,10 26,68 108,10" fill="#1B2B5E"/>
+                                <!-- K: lower arm -->
+                                <polygon points="26,82 26,140 108,140" fill="#1B2B5E"/>
+                                <!-- Diamond outline: Top(105,8) Right(172,75) Bottom(105,142) Left(38,75) -->
+                                <polygon points="105,8 172,75 105,142 38,75"
+                                    fill="white" fill-opacity="0.04"
+                                    stroke="url(#dGrad)" stroke-width="11" stroke-linejoin="round"/>
+                                <!-- Right arrow tip -->
+                                <polygon points="172,75 155,58 155,92" fill="#4CAF50"/>
+                            </svg>
+                            <!-- Logo text -->
+                            <div style="font-family:'Montserrat',sans-serif; font-size:38px; font-weight:800; color:#FFFFFF; letter-spacing:-1px; margin-top:4px;">
+                                Klyv<span style="color:#4CAF50;">o</span>
                             </div>
                         </div>
                     </div>
