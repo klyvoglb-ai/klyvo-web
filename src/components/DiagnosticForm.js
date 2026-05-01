@@ -330,7 +330,7 @@ export const initDiagnosticLogic = () => {
                 <div class="section-content quote-box">${result.escape}</div>
             </div>
 
-            <button onclick="location.href='https://wa.me/${leadData.phone.replace(/\D/g,'')}'" class="btn-primary full-width">AGENDAR SESIÓN ESTRATÉGICA</button>
+            <button onclick="window.open('https://wa.me/573046352816?text=He%20llenado%20mi%20formulario%20en%20l%C3%ADnea%20y%20quiero%20agendar%20una%20llamada', '_blank')" class="btn-primary full-width">AGENDAR SESIÓN ESTRATÉGICA</button>
         `;
     };
 };
