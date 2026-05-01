@@ -297,8 +297,13 @@ export const initDiagnosticLogic = () => {
         if (window.emailjs) {
             const templateParams = {
                 from_name: leadData.name,
+                name: leadData.name,
+                user_name: leadData.name,
                 reply_to: leadData.email,
-                phone: leadData.phone
+                email: leadData.email,
+                user_email: leadData.email,
+                phone: leadData.phone,
+                whatsapp: leadData.phone
             };
 
             emailjs.send('service_g7jngvj', 'template_q8fi9st', templateParams)
