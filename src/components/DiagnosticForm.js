@@ -25,7 +25,22 @@ export const DiagnosticForm = () => {
                 </div>
                 <div class="input-group">
                     <label>WhatsApp (con código de país)</label>
-                    <input type="tel" id="lead-phone" placeholder="+593 ..." required>
+                    <div style="display: flex; gap: 10px;">
+                        <select id="lead-country-code" style="width: 120px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #FFFFFF; padding: 15px 10px;">
+                            <option value="57">🇨🇴 +57</option>
+                            <option value="593">🇪🇨 +593</option>
+                            <option value="52">🇲🇽 +52</option>
+                            <option value="34">🇪🇸 +34</option>
+                            <option value="1">🇺🇸 +1</option>
+                            <option value="51">🇵🇪 +51</option>
+                            <option value="54">🇦🇷 +54</option>
+                            <option value="56">🇨🇱 +56</option>
+                            <option value="506">🇨🇷 +506</option>
+                            <option value="507">🇵🇦 +507</option>
+                            <option value="58">🇻🇪 +58</option>
+                        </select>
+                        <input type="tel" id="lead-phone" placeholder="304 635..." style="flex: 1;" required>
+                    </div>
                 </div>
                 <button id="start-test" class="btn-primary full-width">COMENZAR AUDITORÍA</button>
             </div>
@@ -210,16 +225,33 @@ export const initDiagnosticLogic = () => {
     if (!startBtn) return;
 
     startBtn.addEventListener('click', () => {
-        leadData = {
-            name: document.getElementById('lead-name').value,
-            email: document.getElementById('lead-email').value,
-            phone: document.getElementById('lead-phone').value
-        };
+        const name = document.getElementById('lead-name').value.trim();
+        const email = document.getElementById('lead-email').value.trim();
+        const countryCode = document.getElementById('lead-country-code').value;
+        const phone = document.getElementById('lead-phone').value.trim();
 
-        if (!leadData.name || !leadData.email || !leadData.phone) {
-            alert('Por favor complete todos los datos.');
+        // Basic Validation
+        if (!name || name.length < 3) {
+            alert('Por favor, ingrese su nombre completo.');
             return;
         }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            alert('Por favor, ingrese un correo corporativo válido.');
+            return;
+        }
+
+        if (!phone || phone.length < 7) {
+            alert('Por favor, ingrese un número de WhatsApp válido.');
+            return;
+        }
+
+        leadData = {
+            name: name,
+            email: email,
+            phone: `+${countryCode}${phone.replace(/\D/g,'')}`
+        };
 
         showQuestion(0);
     });
