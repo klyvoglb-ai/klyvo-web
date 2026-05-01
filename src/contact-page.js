@@ -78,23 +78,22 @@ const ContactApp = () => {
                     <!-- RIGHT: Floating logo -->
                     <div style="display: flex; align-items: center; justify-content: center; padding: 40px;">
                         <div class="logo-float logo-glow" style="text-align: center;">
-                            <!-- K diamond logo SVG -->
-                            <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- K vertical bar -->
-                                <rect x="28" y="30" width="22" height="140" rx="4" fill="#0A2540"/>
-                                <!-- K upper arm -->
-                                <polygon points="50,30 50,95 130,30" fill="#0A2540"/>
-                                <!-- K lower arm -->
-                                <polygon points="50,105 50,170 130,170" fill="#0A2540"/>
-                                <!-- Diamond outline -->
-                                <polygon points="110,15 175,80 110,145 45,80" fill="none" stroke="#00C853" stroke-width="14" stroke-linejoin="round"/>
-                                <!-- Diamond right arrow tip -->
-                                <polygon points="175,80 155,60 155,100" fill="#00C853"/>
+                            <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- K: vertical stem -->
+                                <rect x="18" y="18" width="18" height="134" rx="3" fill="#1B2F5E"/>
+                                <!-- K: upper diagonal arm (aligns with diamond top-left edge) -->
+                                <polygon points="36,18 36,78 118,18" fill="#1B2F5E"/>
+                                <!-- K: lower diagonal arm (aligns with diamond bottom-left edge) -->
+                                <polygon points="36,94 36,152 118,152" fill="#1B2F5E"/>
+                                <!-- Diamond outline (rotated square, center ~107,85) -->
+                                <polygon points="107,14 178,85 107,156 36,85"
+                                    fill="none" stroke="#4CAF50" stroke-width="13" stroke-linejoin="round"/>
+                                <!-- Right arrowhead tip of diamond -->
+                                <polygon points="178,85 160,67 160,103" fill="#4CAF50"/>
+                                <!-- Text: "Klyv" navy + "o" green -->
+                                <text x="16" y="215" font-family="'Poppins', 'Montserrat', Arial, sans-serif" font-weight="800" font-size="42" fill="#1B2F5E">Klyv</text>
+                                <text x="116" y="215" font-family="'Poppins', 'Montserrat', Arial, sans-serif" font-weight="800" font-size="42" fill="#4CAF50">o</text>
                             </svg>
-                            <!-- Logo text -->
-                            <div style="margin-top: 16px; font-size: 36px; font-weight: 800; letter-spacing: -1px;">
-                                <span style="color: #0A2540;">Kl</span><span style="color: #0A2540;">yv</span><span style="color: #00C853; font-weight: 900;">o</span>
-                            </div>
                         </div>
                     </div>
 
