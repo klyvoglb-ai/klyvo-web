@@ -1,7 +1,7 @@
 /**
  * Navbar Component (Dark Fixed)
  */
-export const Navbar = () => {
+export const NavbarV2 = () => {
     return `
     <nav class="navbar dark-fixed">
         <div class="container nav-content">

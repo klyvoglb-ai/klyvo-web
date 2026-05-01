@@ -1,5 +1,5 @@
 import './styles/main.css';
-import { Navbar } from './components/Navbar.js';
+import { NavbarV2 as Navbar } from './components/Navbar.js';
 import { Footer } from './components/Footer.js';
 import { initScrollReveal } from './utils/animations.js';
 
