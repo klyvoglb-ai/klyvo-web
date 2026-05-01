@@ -327,7 +327,7 @@ export const initDiagnosticLogic = () => {
 
             <div class="result-section" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
                 <span class="section-label">Ruta de Escape</span>
-                <p class="section-content" style="font-weight: 600; color: var(--primary);">${result.escape}</p>
+                <div class="section-content quote-box" style="font-weight: 600; color: var(--primary); font-style: normal;">${result.escape}</div>
             </div>
 
             <button onclick="location.href='https://wa.me/${leadData.phone.replace(/\D/g,'')}'" class="btn-primary full-width">AGENDAR SESIÓN ESTRATÉGICA</button>
