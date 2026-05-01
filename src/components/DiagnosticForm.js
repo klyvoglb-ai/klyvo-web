@@ -1,5 +1,6 @@
 /**
  * Diagnostic Form Component (Premium Multi-step)
+ * Updated with strategic Revenue Recovery questions.
  */
 export const DiagnosticForm = () => {
     return `
@@ -43,7 +44,7 @@ export const DiagnosticForm = () => {
             border: 1px solid rgba(46, 204, 113, 0.2);
             border-radius: 30px;
             padding: 50px;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             position: relative;
@@ -65,8 +66,8 @@ export const DiagnosticForm = () => {
         }
         .form-step { display: none; animation: fadeIn 0.5s ease; }
         .form-step.active { display: block; }
-        .form-title { font-size: 32px; color: #FFFFFF; margin-bottom: 10px; text-align: center; }
-        .form-subtitle { color: var(--text-muted); text-align: center; margin-bottom: 40px; font-size: 16px; }
+        .form-title { font-size: 32px; color: #FFFFFF; margin-bottom: 10px; text-align: center; font-weight: 700; }
+        .form-subtitle { color: var(--text-muted); text-align: center; margin-bottom: 40px; font-size: 16px; line-height: 1.5; }
         
         .input-group { margin-bottom: 25px; text-align: left; }
         .input-group label { display: block; color: #FFFFFF; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
@@ -86,7 +87,7 @@ export const DiagnosticForm = () => {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 15px;
-            padding: 20px;
+            padding: 22px;
             margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -95,12 +96,12 @@ export const DiagnosticForm = () => {
             align-items: center;
             gap: 15px;
         }
-        .option-card:hover { background: rgba(46, 204, 113, 0.1); border-color: var(--primary); }
+        .option-card:hover { background: rgba(46, 204, 113, 0.1); border-color: var(--primary); transform: translateX(10px); }
         .option-card.selected { background: var(--primary); border-color: var(--primary); }
         .option-card.selected span { color: #06112a !important; }
-        .option-card span { color: #FFFFFF; font-weight: 500; font-size: 16px; }
+        .option-card span { color: #FFFFFF; font-weight: 500; font-size: 16px; line-height: 1.4; }
 
-        .btn-primary.full-width { width: 100%; margin-top: 20px; padding: 18px; font-size: 18px; }
+        .btn-primary.full-width { width: 100%; margin-top: 20px; padding: 18px; font-size: 18px; font-weight: 700; cursor: pointer; }
 
         .result-badge {
             background: var(--primary);
@@ -110,8 +111,10 @@ export const DiagnosticForm = () => {
             font-weight: 700;
             display: inline-block;
             margin-bottom: 20px;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
-        .result-title { font-size: 42px; line-height: 1.1; margin-bottom: 20px; color: #FFFFFF; }
+        .result-title { font-size: 42px; line-height: 1.1; margin-bottom: 20px; color: #FFFFFF; font-weight: 700; }
         .result-desc { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -119,73 +122,71 @@ export const DiagnosticForm = () => {
     `;
 };
 
-/**
- * Logic to handle the diagnostic steps
- */
 export const initDiagnosticLogic = () => {
     const questions = [
         {
-            q: "¿Cómo calificaría su seguimiento actual de leads?",
+            q: "1. ¿En qué sector opera su organización actualmente?",
             options: [
-                { t: "Manual e inconsistente", v: 1 },
-                { t: "Semi-automatizado con CRM", v: 3 },
-                { t: "Totalmente automatizado y predictivo", v: 5 }
+                { t: "Sector Hotelero / Turismo", v: 3 },
+                { t: "Clínica Estética / Salud High-Ticket", v: 4 },
+                { t: "Asesorías / Consultoría / Servicios Profesionales", v: 2 },
+                { t: "B2B / Real Estate / Otros Servicios", v: 2 }
             ]
         },
         {
-            q: "¿Qué porcentaje de sus leads se pierden por falta de respuesta?",
+            q: "2. ¿Cuál es su rol principal dentro de la empresa?",
             options: [
-                { t: "Más del 50%", v: 1 },
-                { t: "Entre el 20% y 50%", v: 3 },
-                { t: "Menos del 10%", v: 5 }
+                { t: "Dueño / CEO", v: 5 },
+                { t: "Director de Operaciones / Ventas", v: 4 },
+                { t: "Inversor / Socio Gerente", v: 3 }
             ]
         },
         {
-            q: "¿Cuenta con un sistema de recuperación de carritos/leads abandonados?",
+            q: "3. ¿Cuál de estas situaciones describe mejor su operación hoy?",
             options: [
-                { t: "No, ninguno", v: 1 },
-                { t: "Sí, pero es básico (Email)", v: 3 },
-                { t: "Sí, multi-canal (Email, WhatsApp, Retargeting)", v: 5 }
+                { t: '"Invertimos en anuncios, pero los leads mueren en un WhatsApp desordenado"', v: 5 },
+                { t: '"Mi equipo está saturado respondiendo dudas básicas y no tiene tiempo para cerrar"', v: 4 },
+                { t: '"Tenemos una base de datos grande, pero nunca la hemos re-contactado"', v: 3 }
             ]
         },
         {
-            q: "¿Cuál es su tiempo promedio de respuesta a un nuevo lead?",
+            q: "4. ¿Qué volumen de prospectos (leads) genera su negocio mensualmente?",
             options: [
-                { t: "Más de 24 horas", v: 1 },
-                { t: "Entre 1 y 4 horas", v: 3 },
-                { t: "Menos de 5 minutos", v: 5 }
+                { t: "Menos de 100 leads", v: 1 },
+                { t: "Entre 100 y 500 leads", v: 3 },
+                { t: "Más de 500 leads", v: 5 }
             ]
         },
         {
-            q: "¿Realiza remarketing basado en el comportamiento del lead?",
+            q: "5. ¿Qué porcentaje de sus leads estima que se pierden por falta de respuesta inmediata o seguimientos olvidados?",
             options: [
-                { t: "Nunca", v: 1 },
-                { t: "A veces", v: 3 },
-                { t: "Constantemente", v: 5 }
+                { t: "Menos del 20% (Fuga controlada)", v: 1 },
+                { t: "Entre el 20% y el 50% (Pérdida considerable de ROI)", v: 3 },
+                { t: "Más del 50% (Fuga crítica de capital operativo)", v: 5 }
             ]
         },
         {
-            q: "¿Su equipo de ventas recibe notificaciones en tiempo real?",
+            q: "6. ¿Cuánto dinero estima que se 'evapora' de su cuenta cada mes debido a este silencio operativo?",
             options: [
-                { t: "No", v: 1 },
-                { t: "Solo por email", v: 3 },
-                { t: "WhatsApp y Push instantáneo", v: 5 }
+                { t: "Menos de $5,000 USD", v: 1 },
+                { t: "Entre $5,000 y $20,000 USD", v: 3 },
+                { t: "Más de $20,000 USD", v: 5 }
             ]
         },
         {
-            q: "¿Tiene visibilidad del ROI exacto de cada fuente de leads?",
+            q: "7. ¿Por qué cree que no ha podido resolver este problema hasta ahora?",
             options: [
-                { t: "No tengo idea", v: 1 },
-                { t: "Aproximado", v: 3 },
-                { t: "Exacto en tiempo real", v: 5 }
+                { t: '"No he encontrado suficientes vendedores capacitados"', v: 2 },
+                { t: '"Las herramientas que he probado son muy complejas y nadie las usa"', v: 3 },
+                { t: '"Mi equipo está atrapado en la \'Trampa Operativa\' y no tiene una infraestructura que automatice el ruido"', v: 5 }
             ]
         },
         {
-            q: "¿Su infraestructura actual permite escalar el volumen de leads x10?",
+            q: "8. Si logramos sellar su fuga de capital mediante una infraestructura de Revenue Recovery, ¿qué tan listo está para desplegarla?",
             options: [
-                { t: "Se colapsaría", v: 1 },
-                { t: "Requeriría mucho esfuerzo manual", v: 3 },
-                { t: "Está lista para el escalamiento", v: 5 }
+                { t: '"Estoy listo para recuperar mi rentabilidad de inmediato"', v: 5 },
+                { t: '"Necesito el diagnóstico antes de tomar una decisión de inversión"', v: 3 },
+                { t: '"Solo estoy explorando opciones por ahora"', v: 1 }
             ]
         }
     ];
@@ -214,14 +215,11 @@ export const initDiagnosticLogic = () => {
 
     const showQuestion = (index) => {
         const container = document.getElementById('question-container');
-        const content = document.getElementById('form-content');
         const progress = document.getElementById('progress-bar');
         
-        // Update Progress
         const percent = ((index + 1) / questions.length) * 100;
         progress.style.width = `${percent}%`;
 
-        // Hide others
         document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
         container.classList.add('active');
 
@@ -238,7 +236,6 @@ export const initDiagnosticLogic = () => {
             </div>
         `;
 
-        // Option click handlers
         container.querySelectorAll('.option-card').forEach(card => {
             card.addEventListener('click', () => {
                 score += parseInt(card.dataset.value);
@@ -259,25 +256,26 @@ export const initDiagnosticLogic = () => {
         let profile = "";
         let desc = "";
 
-        if (score <= 15) {
+        // Max possible score: 40 (approx)
+        if (score <= 18) {
             profile = "Optimización Urgente";
-            desc = "Su sistema actual presenta fugas críticas de capital. Está perdiendo más del 60% de su potencial de facturación por falta de infraestructura técnica.";
-        } else if (score <= 25) {
+            desc = `Estimado ${leadData.name}, su negocio presenta fugas críticas de capital. El silencio operativo está costándole hasta un 50% de ROI mensual. Necesita una infraestructura de Revenue Recovery inmediata para sellar las grietas.`;
+        } else if (score <= 28) {
             profile = "Potencial de Crecimiento";
-            desc = "Tiene una base sólida, pero sus procesos manuales están limitando su escalamiento. Con automatización avanzada, podría duplicar su ROI en 90 días.";
+            desc = `Estimado ${leadData.name}, su operación es sólida pero está atrapada en la "Trampa Operativa". Tiene un potencial de facturación no aprovechado del 30% que podría recuperar en 90 días mediante automatización.`;
         } else if (score <= 35) {
             profile = "Escalamiento Avanzado";
-            desc = "Su infraestructura es buena. Estamos en la fase de 'fine-tuning'. Pequeños ajustes en la recuperación multi-canal dispararán su rentabilidad.";
+            desc = `Estimado ${leadData.name}, su infraestructura está lista para el siguiente nivel. Solo requiere ajustes en la recuperación multi-canal para optimizar su ROI y escalar agresivamente su volumen de leads.`;
         } else {
             profile = "Liderazgo de Mercado";
-            desc = "Usted opera al más alto nivel. Su enfoque debe ser la inteligencia artificial predictiva para mantener la ventaja competitiva absoluta.";
+            desc = `Estimado ${leadData.name}, usted opera con alta eficiencia. Su enfoque debe ser ahora la integración de IA predictiva para dominar su sector y mantener una ventaja competitiva absoluta e inalcanzable.`;
         }
 
         container.innerHTML = `
-            <div class="result-badge">RESULTADO PARA ${leadData.name.toUpperCase()}</div>
+            <div class="result-badge">ANÁLISIS ESTRATÉGICO PARA ${leadData.name.toUpperCase()}</div>
             <h2 class="result-title">${profile}</h2>
             <p class="result-desc">${desc}</p>
-            <button onclick="location.href='#contact'" class="btn-primary full-width">AGENDAR CONSULTORÍA ESTRATÉGICA</button>
+            <button onclick="location.href='https://wa.me/${leadData.phone.replace(/\D/g,'')}'" class="btn-primary full-width">RESERVAR SESIÓN DE REVENUE RECOVERY</button>
         `;
     };
 };
