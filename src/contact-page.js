@@ -70,75 +70,40 @@ const ContactApp = () => {
                     }
                 </style>
 
-                <!-- 2-column layout: logo LEFT, cards RIGHT -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px;">
+                <!-- 2-column layout: WhatsApp LEFT, Email RIGHT -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; margin-bottom: 60px;">
 
-                    <!-- LEFT: Floating KLYVO Logo -->
-                    <div style="display:flex;align-items:center;justify-content:center;padding:20px;">
-                        <div class="logo-float" style="text-align:center;">
-                            <svg width="200" height="165" viewBox="0 0 200 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="kg" x1="8" y1="6" x2="168" y2="134" gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%"   stop-color="#1B2F5E"/>
-                                        <stop offset="35%"  stop-color="#1A6040"/>
-                                        <stop offset="100%" stop-color="#4CAF50"/>
-                                    </linearGradient>
-                                </defs>
-                                <!-- K: vertical stem -->
-                                <rect x="8" y="6" width="14" height="128" rx="2" fill="url(#kg)"/>
-                                <!-- K: upper arm (45°, aligns with diamond top-left edge) -->
-                                <polygon points="22,6 104,6 41,69 22,69" fill="url(#kg)"/>
-                                <!-- K: lower arm (45°, aligns with diamond bottom-left edge) -->
-                                <polygon points="22,71 41,71 104,134 22,134" fill="url(#kg)"/>
-                                <!-- Diamond outer (filled) -->
-                                <polygon points="104,6 168,70 104,134 40,70" fill="url(#kg)"/>
-                                <!-- Diamond inner hollow (white cutout) -->
-                                <polygon points="104,37 134,70 104,103 74,70" fill="white"/>
-                                <!-- Small right-pointing arrow inside hollow -->
-                                <polygon points="126,70 140,59 152,70 140,81" fill="url(#kg)"/>
+                    <!-- LEFT: WhatsApp -->
+                    <div class="contact-soft-card" style="padding: 36px 28px; text-align: center;">
+                        <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                             </svg>
-                            <div style="font-family:'Montserrat',sans-serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-top:2px;">
-                                <span style="color:#1B2F5E;">Klyv</span><span style="color:#4CAF50;">o</span>
-                            </div>
                         </div>
+                        <p style="font-size: 11px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; font-weight: 600;">WhatsApp</p>
+                        <a href="https://wa.me/573046352816?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; margin-bottom: 10px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                            <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇨🇴 Colombia</p>
+                            <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">+57 304 635 2816</p>
+                        </a>
+                        <a href="https://wa.me/593979003056?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                            <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇪🇨 Ecuador</p>
+                            <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">+593 97 900 3056</p>
+                        </a>
                     </div>
 
-                    <!-- RIGHT: Cards stacked -->
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-
-                        <!-- Email -->
-                        <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none;">
-                            <div class="contact-soft-card" style="padding: 28px; text-align: center;">
-                                <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
-                                    </svg>
-                                </div>
-                                <p style="font-size: 11px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 600;">Correo</p>
-                                <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">klyvoglb@gmail.com</p>
-                            </div>
-                        </a>
-
-                        <!-- WhatsApp -->
-                        <div class="contact-soft-card" style="padding: 28px; text-align: center;">
+                    <!-- RIGHT: Email -->
+                    <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none; display: flex; flex-direction: column;">
+                        <div class="contact-soft-card" style="padding: 36px 28px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
                             <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                             </div>
-                            <p style="font-size: 11px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; font-weight: 600;">WhatsApp</p>
-                            <a href="https://wa.me/573046352816?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; margin-bottom: 10px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-                                <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇨🇴 Colombia</p>
-                                <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">+57 304 635 2816</p>
-                            </a>
-                            <a href="https://wa.me/593979003056?text=Hola%20KLYVO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="text-decoration: none; display: block; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,255,133,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-                                <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 4px;">🇪🇨 Ecuador</p>
-                                <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">+593 97 900 3056</p>
-                            </a>
+                            <p style="font-size: 11px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 600;">Correo</p>
+                            <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">klyvoglb@gmail.com</p>
                         </div>
-
-                    </div>
+                    </a>
 
                 </div>
 
