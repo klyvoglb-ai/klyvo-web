@@ -258,6 +258,11 @@ export const initDiagnosticLogic = () => {
         });
     }
 
+    // Initialize EmailJS
+    if (window.emailjs) {
+        emailjs.init("AScRj2dq-26qm9YUZ");
+    }
+
     if (!startBtn) return;
 
     startBtn.addEventListener('click', () => {
@@ -267,18 +272,18 @@ export const initDiagnosticLogic = () => {
 
         // Basic Validation
         if (!name || name.length < 3) {
-            alert('Por favor, ingrese su nombre completo.');
+            alert('Por favor, ingrese su nombre.');
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email || !emailRegex.test(email)) {
-            alert('Por favor, ingrese un correo corporativo válido.');
+            alert('Por favor, ingrese un correo válido.');
             return;
         }
 
         if (!phone || phone.length < 7) {
-            alert('Por favor, ingrese un número de WhatsApp válido.');
+            alert('Por favor, ingrese un número de celular válido.');
             return;
         }
 
@@ -287,6 +292,22 @@ export const initDiagnosticLogic = () => {
             email: email,
             phone: `+${currentCountryCode}${phone.replace(/\D/g,'')}`
         };
+
+        // Send Lead to EmailJS
+        if (window.emailjs) {
+            const templateParams = {
+                from_name: leadData.name,
+                reply_to: leadData.email,
+                phone: leadData.phone
+            };
+
+            emailjs.send('service_g7jngvj', 'template_q8fi9st', templateParams)
+                .then(() => {
+                    console.log('Lead enviado con éxito');
+                }, (err) => {
+                    console.error('Error al enviar lead:', err);
+                });
+        }
 
         showQuestion(0);
     });
