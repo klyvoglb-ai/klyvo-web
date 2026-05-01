@@ -296,21 +296,19 @@ export const initDiagnosticLogic = () => {
         // Send Lead to EmailJS
         if (window.emailjs) {
             const templateParams = {
-                from_name: leadData.name,
                 name: leadData.name,
-                user_name: leadData.name,
+                from_name: leadData.name,
                 reply_to: leadData.email,
-                email: leadData.email,
-                user_email: leadData.email,
-                phone: leadData.phone,
-                whatsapp: leadData.phone
+                phone: leadData.phone
             };
+
+            console.log('Enviando datos a EmailJS:', templateParams);
 
             emailjs.send('service_g7jngvj', 'template_q8fi9st', templateParams)
                 .then(() => {
-                    console.log('Lead enviado con éxito');
+                    console.log('¡ÉXITO! Lead enviado correctamente.');
                 }, (err) => {
-                    console.error('Error al enviar lead:', err);
+                    console.error('ERROR de EmailJS:', err);
                 });
         }
 
