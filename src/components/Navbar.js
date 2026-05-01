@@ -14,7 +14,7 @@ export const Navbar = () => {
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
             <a href="diagnostico.html" class="btn-primary">QUIERO MI DIAGNÓSTICO</a>
         </div>
