@@ -1,6 +1,7 @@
 /**
  * Main Application Orchestrator (Revenue Recovery Redesign)
  */
+import './styles/main.css';
 import { Navbar } from './components/Navbar.js';
 import { Hero } from './components/Hero.js';
 import { Problem } from './components/Problem.js';
