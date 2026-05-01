@@ -32,19 +32,66 @@ const ContactApp = () => {
                         100% { transform: translateY(0px); }
                     }
                     .logo-float { animation: floatLogo 3.5s ease-in-out infinite; }
-                    .logo-glow  { filter: drop-shadow(0 0 24px rgba(0,255,133,0.35)); }
+                    .logo-big-icon {
+                        width: 120px; height: 120px;
+                        background: var(--primary, #00FF85);
+                        transform: rotate(45deg);
+                        display: flex; align-items: center; justify-content: center;
+                        border-radius: 14px;
+                        box-shadow: 0 0 60px rgba(0,255,133,0.25);
+                    }
+                    .logo-big-icon span {
+                        transform: rotate(-45deg);
+                        color: #06112a;
+                        font-weight: 900;
+                        font-size: 64px;
+                        font-family: 'Montserrat', sans-serif;
+                        line-height: 1;
+                    }
+                    .logo-big-text {
+                        margin-top: 24px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 48px;
+                        font-weight: 800;
+                        color: #FFFFFF;
+                        letter-spacing: -1px;
+                    }
+                    .logo-big-text .y-green { color: var(--primary, #00FF85); }
+                    .contact-soft-card {
+                        background: rgba(13, 35, 80, 0.6);
+                        border: 1px solid rgba(0,255,133,0.2);
+                        border-radius: 20px;
+                        transition: all 0.3s ease;
+                    }
+                    .contact-soft-card:hover {
+                        border-color: rgba(0,255,133,0.5);
+                        background: rgba(13, 35, 80, 0.8);
+                        transform: translateY(-4px);
+                    }
                 </style>
 
-                <!-- 2-column layout -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px;">
+                <!-- 2-column layout: logo LEFT, cards RIGHT -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px;">
 
-                    <!-- LEFT: Cards stacked -->
-                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <!-- LEFT: Floating logo -->
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+                        <div class="logo-float" style="text-align: center;">
+                            <div class="logo-big-icon">
+                                <span>K</span>
+                            </div>
+                            <div class="logo-big-text">
+                                Kl<span class="y-green">y</span>vo
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Cards stacked -->
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
 
                         <!-- Email -->
                         <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none;">
-                            <div style="background: #0A1931; border: 1px solid rgba(0,255,133,0.25); border-radius: 20px; padding: 28px; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(0,255,133,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(0,255,133,0.25)'">
-                                <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                            <div class="contact-soft-card" style="padding: 28px; text-align: center;">
+                                <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                         <polyline points="22,6 12,13 2,6"/>
@@ -56,8 +103,8 @@ const ContactApp = () => {
                         </a>
 
                         <!-- WhatsApp -->
-                        <div style="background: #0A1931; border: 1px solid rgba(0,255,133,0.25); border-radius: 20px; padding: 28px; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(0,255,133,0.6)'" onmouseout="this.style.borderColor='rgba(0,255,133,0.25)'">
-                            <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                        <div class="contact-soft-card" style="padding: 28px; text-align: center;">
+                            <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                                 </svg>
@@ -73,28 +120,6 @@ const ContactApp = () => {
                             </a>
                         </div>
 
-                    </div>
-
-                    <!-- RIGHT: Floating logo -->
-                    <div style="display: flex; align-items: center; justify-content: center; padding: 40px;">
-                        <div class="logo-float logo-glow" style="text-align: center;">
-                            <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- K: vertical stem -->
-                                <rect x="18" y="18" width="18" height="134" rx="3" fill="#1B2F5E"/>
-                                <!-- K: upper diagonal arm (aligns with diamond top-left edge) -->
-                                <polygon points="36,18 36,78 118,18" fill="#1B2F5E"/>
-                                <!-- K: lower diagonal arm (aligns with diamond bottom-left edge) -->
-                                <polygon points="36,94 36,152 118,152" fill="#1B2F5E"/>
-                                <!-- Diamond outline (rotated square, center ~107,85) -->
-                                <polygon points="107,14 178,85 107,156 36,85"
-                                    fill="none" stroke="#4CAF50" stroke-width="13" stroke-linejoin="round"/>
-                                <!-- Right arrowhead tip of diamond -->
-                                <polygon points="178,85 160,67 160,103" fill="#4CAF50"/>
-                                <!-- Text: "Klyv" navy + "o" green -->
-                                <text x="16" y="215" font-family="'Poppins', 'Montserrat', Arial, sans-serif" font-weight="800" font-size="42" fill="#1B2F5E">Klyv</text>
-                                <text x="116" y="215" font-family="'Poppins', 'Montserrat', Arial, sans-serif" font-weight="800" font-size="42" fill="#4CAF50">o</text>
-                            </svg>
-                        </div>
                     </div>
 
                 </div>
