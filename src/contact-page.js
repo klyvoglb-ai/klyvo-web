@@ -58,14 +58,14 @@ const ContactApp = () => {
                     }
                     .logo-big-text .y-green { color: var(--primary, #00FF85); }
                     .contact-soft-card {
-                        background: rgba(13, 35, 80, 0.6);
+                        background: #2D4270;
                         border: 1px solid rgba(0,255,133,0.2);
                         border-radius: 20px;
                         transition: all 0.3s ease;
                     }
                     .contact-soft-card:hover {
                         border-color: rgba(0,255,133,0.5);
-                        background: rgba(13, 35, 80, 0.8);
+                        background: #344D82;
                         transform: translateY(-4px);
                     }
                 </style>
