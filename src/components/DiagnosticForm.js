@@ -152,6 +152,19 @@ export const DiagnosticForm = () => {
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) {
+            .diagnostic-card { padding: 30px 20px; border-radius: 20px; }
+            .form-title { font-size: 24px; }
+            .form-subtitle { font-size: 14px; margin-bottom: 25px; }
+            .option-card { padding: 15px; transform: none !important; }
+            .option-card span { font-size: 14px; }
+            .result-name { font-size: 26px; }
+            .section-content { font-size: 15px; }
+            
+            /* Lead Capture Grid Mobile */
+            #step-0 div[style*="display: flex"] { flex-direction: column !important; }
+            #country-picker { width: 100% !important; margin-bottom: 10px; }
+        }
     </style>
     `;
 };

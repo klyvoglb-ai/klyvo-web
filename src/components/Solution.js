@@ -77,8 +77,14 @@ export const Solution = () => {
         .mech-card p { color: #64748B; font-size: 18px; line-height: 1.8; }
         
         @media (max-width: 768px) {
-            .mechanisms-grid { grid-template-columns: 1fr; }
+            .solution { padding: 6rem 0; }
+            .section-header h2 { font-size: 30px; }
+            .section-header p { font-size: 16px; }
+            .mechanisms-grid { grid-template-columns: 1fr; gap: 30px; }
             .mech-card { padding: 40px 30px; }
+            .mech-card h3 { font-size: 24px; }
+            .mech-sub { font-size: 16px; }
+            .mech-card p { font-size: 16px; }
         }
     </style>
     `;

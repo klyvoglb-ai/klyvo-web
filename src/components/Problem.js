@@ -115,6 +115,17 @@ export const Problem = () => {
         }
         .gap-alert h4 { color: var(--primary); font-size: 22px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .gap-alert p { font-size: clamp(18px, 2vw, 24px); line-height: 1.7; max-width: 900px; margin: 0 auto; color: rgba(255,255,255,0.95); font-weight: 500;}
+        @media (max-width: 768px) {
+            .problem { padding: 6rem 0; }
+            .section-header { margin-bottom: 4rem; }
+            .section-header h2 { font-size: 30px; }
+            .section-header p { font-size: 16px; }
+            .strainer-grid { grid-template-columns: 1fr; gap: 20px; margin-bottom: 4rem; }
+            .strainer-card { padding: 35px 25px; }
+            .gap-alert { padding: 40px 25px; }
+            .gap-alert h4 { font-size: 18px; }
+            .gap-alert p { font-size: 18px; }
+        }
     </style>
     `;
 };

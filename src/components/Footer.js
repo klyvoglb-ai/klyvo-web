@@ -71,6 +71,13 @@ export const Footer = () => {
         }
         .social-icons { display: flex; gap: 20px; }
         .social-icons a { color: rgba(255, 255, 255, 0.6); font-size: 18px; }
+        @media (max-width: 768px) {
+            .footer { padding: 60px 0 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; margin-bottom: 50px; }
+            .footer-brand p { margin: 20px auto 0; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .logo { justify-content: center; }
+        }
     </style>
     `;
 };

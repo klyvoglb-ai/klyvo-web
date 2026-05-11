@@ -80,6 +80,12 @@ export const UseCases = () => {
         }
         .case-card h3 { font-size: 20px; margin-bottom: 15px; color: #06112a; font-weight: 700; }
         .case-card p { color: #64748B; line-height: 1.6; font-size: 15px;}
+        @media (max-width: 768px) {
+            .use-cases { padding: 6rem 0; }
+            .section-header h2 { font-size: 30px; }
+            .cases-grid { grid-template-columns: 1fr; gap: 20px; }
+            .case-card { padding: 30px 25px; }
+        }
     </style>
     `;
 };

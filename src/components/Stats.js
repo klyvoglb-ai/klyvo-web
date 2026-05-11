@@ -45,6 +45,12 @@ export const Stats = () => {
             letter-spacing: 2px;
             font-weight: 700;
         }
+        @media (max-width: 768px) {
+            .stats { padding: 60px 0; }
+            .stat-item h3 { font-size: 40px; }
+            .stat-item p { font-size: 12px; }
+            .stats-grid { gap: 30px; }
+        }
     </style>
     `;
 };

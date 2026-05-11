@@ -99,7 +99,12 @@ export const FAQ = () => {
         }
         
         @media (max-width: 768px) {
-            .faq-container { grid-template-columns: 1fr; }
+            .faq-section { padding: 6rem 0; }
+            .section-header { margin-bottom: 3rem; }
+            .section-header h2 { font-size: 30px; }
+            .faq-container { grid-template-columns: 1fr; gap: 15px; }
+            .faq-question { padding: 20px; font-size: 15px; }
+            .faq-answer p { padding: 0 20px 20px; }
         }
     </style>
     `;

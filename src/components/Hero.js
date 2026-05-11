@@ -42,6 +42,11 @@ export const Hero = () => {
             margin: 0 auto 50px;
             line-height: 1.8;
         }
+        @media (max-width: 768px) {
+            .hero { padding-top: 120px; min-height: 80vh; }
+            .hero-title { font-size: 38px; letter-spacing: -1px; margin-bottom: 25px; }
+            .hero-subtitle { font-size: 16px; margin-bottom: 35px; }
+        }
     </style>
     `;
 };

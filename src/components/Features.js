@@ -89,6 +89,13 @@ export const Features = () => {
             color: #64748B; 
             line-height: 1.7; 
         }
+        @media (max-width: 768px) {
+            .features { padding: 6rem 0; }
+            .section-header h2 { font-size: 30px; }
+            .section-header { margin-bottom: 3rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 20px; }
+            .feature-card { padding: 40px 25px; }
+        }
     </style>
     `;
 };
