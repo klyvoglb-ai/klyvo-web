@@ -68,10 +68,22 @@ const ContactApp = () => {
                         background: #344D82;
                         transform: translateY(-4px);
                     }
+                    .contact-grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 30px;
+                        align-items: stretch;
+                    }
+                    @media (max-width: 768px) {
+                        .contact-grid {
+                            grid-template-columns: 1fr;
+                            gap: 20px;
+                        }
+                    }
                 </style>
 
                 <!-- 2-column layout: WhatsApp LEFT, Email RIGHT -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; margin-bottom: 60px;">
+                <div class="contact-grid" style="margin-bottom: 60px;">
 
                     <!-- LEFT: WhatsApp -->
                     <div class="contact-soft-card" style="padding: 36px 28px; text-align: center;">
