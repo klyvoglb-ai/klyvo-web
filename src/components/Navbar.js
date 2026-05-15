@@ -12,14 +12,14 @@ export const NavbarV2 = () => {
                 <span class="logo-text">Kl<span class="y-green">y</span>vo</span>
             </a>
             
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="mobile-only-btn"><a href="diagnostico.html" class="btn-primary">DIAGNÓSTICO</a></li>
+            </ul>
+            
             <div class="nav-right">
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="mobile-only-btn"><a href="diagnostico.html" class="btn-primary">DIAGNÓSTICO</a></li>
-                </ul>
-                
                 <a href="diagnostico.html" class="btn-primary desktop-only">QUIERO MI DIAGNÓSTICO</a>
 
                 <!-- Mobile Toggle -->
@@ -30,6 +30,7 @@ export const NavbarV2 = () => {
                 </div>
             </div>
         </div>
+
     </nav>
     <style>
         .navbar.dark-fixed {
@@ -81,6 +82,15 @@ export const NavbarV2 = () => {
         .y-green { color: var(--primary); }
         
         .nav-links { display: flex; align-items: center; gap: 35px; list-style: none; margin: 0; padding: 0; }
+        
+        @media (min-width: 993px) {
+            .nav-links {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
         .nav-links li { list-style: none; padding: 0; margin: 0; }
         .nav-links a { color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 500; transition: var(--transition-smooth); }
         .nav-links a:hover { color: var(--primary); }
