@@ -92,7 +92,7 @@ const ContactApp = () => {
                     </div>
 
                     <!-- RIGHT: Email -->
-                    <a href="mailto:klyvoglb@gmail.com" style="text-decoration: none; display: flex; flex-direction: column;">
+                    <a href="mailto:contacto@klyvoglb.com" style="text-decoration: none; display: flex; flex-direction: column;">
                         <div class="contact-soft-card" style="padding: 36px 28px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
                             <div style="width: 52px; height: 52px; background: rgba(0,255,133,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -101,7 +101,7 @@ const ContactApp = () => {
                                 </svg>
                             </div>
                             <p style="font-size: 11px; color: #00FF85; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 600;">Correo</p>
-                            <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">klyvoglb@gmail.com</p>
+                            <p style="font-size: 15px; font-weight: 700; color: #FFFFFF; margin: 0;">contacto@klyvoglb.com</p>
                         </div>
                     </a>
 
