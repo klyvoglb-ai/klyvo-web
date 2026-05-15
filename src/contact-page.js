@@ -1,5 +1,5 @@
 import './styles/main.css';
-import { NavbarV2 as Navbar } from './components/Navbar.js';
+import { NavbarV2 as Navbar, initNavbarLogic } from './components/Navbar.js';
 import { Footer } from './components/Footer.js';
 import { initScrollReveal } from './utils/animations.js';
 
@@ -129,6 +129,7 @@ const render = () => {
     if (appContainer) {
         appContainer.innerHTML = ContactApp();
         initScrollReveal();
+        initNavbarLogic();
         
         // Navbar scroll behavior
         window.addEventListener('scroll', () => {

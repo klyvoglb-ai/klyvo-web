@@ -2,7 +2,7 @@
  * Main Application Orchestrator (Revenue Recovery Redesign)
  */
 import './styles/main.css';
-import { NavbarV2 as Navbar } from './components/Navbar.js';
+import { NavbarV2 as Navbar, initNavbarLogic } from './components/Navbar.js';
 import { Hero } from './components/Hero.js';
 import { Problem } from './components/Problem.js';
 import { Solution } from './components/Solution.js';
@@ -75,6 +75,7 @@ const render = () => {
         initScrollReveal();
         initParallax();
         initFAQ();
+        initNavbarLogic();
         
         // Navbar scroll behavior
         window.addEventListener('scroll', () => {

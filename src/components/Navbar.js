@@ -12,21 +12,23 @@ export const NavbarV2 = () => {
                 <span class="logo-text">Kl<span class="y-green">y</span>vo</span>
             </a>
             
-            <!-- Mobile Toggle -->
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <div class="nav-right">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="mobile-only-btn"><a href="diagnostico.html" class="btn-primary">DIAGNÓSTICO</a></li>
+                </ul>
+                
+                <a href="diagnostico.html" class="btn-primary desktop-only">QUIERO MI DIAGNÓSTICO</a>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li class="mobile-only"><a href="diagnostico.html" class="btn-primary">DIAGNÓSTICO</a></li>
-            </ul>
-            
-            <a href="diagnostico.html" class="btn-primary desktop-only">QUIERO MI DIAGNÓSTICO</a>
+                <!-- Mobile Toggle -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </div>
     </nav>
     <style>
@@ -51,6 +53,8 @@ export const NavbarV2 = () => {
             align-items: center;
             width: 100%;
         }
+        .nav-right { display: flex; align-items: center; gap: 30px; }
+        
         .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .logo-icon {
             width: 32px;
@@ -81,31 +85,33 @@ export const NavbarV2 = () => {
         .nav-links a { color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 500; transition: var(--transition-smooth); }
         .nav-links a:hover { color: var(--primary); }
         
-        .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+        .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 1001; }
         .bar { width: 25px; height: 3px; background-color: #FFFFFF; transition: var(--transition-smooth); border-radius: 2px; }
         
-        .mobile-only { display: none; }
         .desktop-only { display: block; }
+        .mobile-only-btn { display: none; }
 
         @media (max-width: 992px) {
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 right: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
+                width: 280px; /* Side menu width */
+                height: 100vh;
                 background: #06112a;
                 flex-direction: column;
                 justify-content: center;
-                gap: 40px;
+                gap: 30px;
                 transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 40px;
             }
             .nav-links.active { right: 0; }
-            .nav-links a { font-size: 20px; }
+            .nav-links a { font-size: 18px; width: 100%; }
             .menu-toggle { display: flex; }
             .desktop-only { display: none; }
-            .mobile-only { display: block; }
+            .mobile-only-btn { display: block; width: 100%; margin-top: 20px; }
             
             /* Hamburger Animation */
             .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
@@ -113,23 +119,38 @@ export const NavbarV2 = () => {
             .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
         }
     </style>
-    <script>
-        // Use a persistent way to init navbar logic if it's not already handled
-        if (!window.navbarInit) {
-            window.navbarInit = true;
-            document.addEventListener('click', (e) => {
-                const toggle = document.getElementById('mobile-menu');
-                const navLinks = document.getElementById('nav-links');
-                if (toggle && toggle.contains(e.target)) {
-                    toggle.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                } else if (navLinks && navLinks.classList.contains('active') && e.target.tagName === 'A') {
-                    toggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                }
+    `;
+};
+
+export const initNavbarLogic = () => {
+    const toggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                navLinks.classList.remove('active');
             });
-        }
-    </script>
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+                toggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+};
+
 
     `;
 };

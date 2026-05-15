@@ -1,5 +1,5 @@
 import './styles/main.css';
-import { NavbarV2 as Navbar } from './components/Navbar.js';
+import { NavbarV2 as Navbar, initNavbarLogic } from './components/Navbar.js';
 import { Footer } from './components/Footer.js';
 import { DiagnosticForm, initDiagnosticLogic } from './components/DiagnosticForm.js';
 import { initScrollReveal } from './utils/animations.js';
@@ -22,6 +22,7 @@ const render = () => {
         appContainer.innerHTML = DiagnosticApp();
         initScrollReveal();
         initDiagnosticLogic();
+        initNavbarLogic();
         
         // Navbar scroll behavior
         window.addEventListener('scroll', () => {
